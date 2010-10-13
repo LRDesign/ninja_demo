@@ -7,12 +7,14 @@
 
     = stylesheet_link_tag 'screen', :media=>'screen, projection' 
   
-    = javascript_include_tag "jquery.min.js"
-    = javascript_include_tag "rails.js"    
+    = javascript_include_tag "jquery-1.4.2.js"
+    -# = javascript_include_tag "rails.js"    
     = javascript_include_tag "jquery.ninja_script.js"      
+    = javascript_include_tag "application.js"      
                                                        
     = csrf_meta_tag 
                                                     
-  %body
+  %body      
+    #messages
     #content    
       = yield                 
