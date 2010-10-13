@@ -4,6 +4,4 @@
   %td= product.price 
   %td= link_to 'Show', product 
   %td= link_to 'Edit', edit_product_path(product) 
-  %td
-    = form_for product, :method => :delete
-      
+  %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
