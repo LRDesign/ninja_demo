@@ -3,5 +3,5 @@
                 
 $.behavior({    
   // '#ajax_new': $.ninja.make_ajax_link()
-  '#ajax_new_form': $.ninja.ajax_submission()
+  'form#new_product': $.ninja.ajax_submission()
 })
