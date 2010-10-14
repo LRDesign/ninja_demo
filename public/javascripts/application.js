@@ -1,13 +1,13 @@
 $.behavior({    
   'a#ajax_me': 					$.ninja.submits_as_ajax(),
-  'form#new_product': 	$.ninja.submits_as_ajax({ 
-		busy_element: function(elem){ return $('#products table') } 
-	})
+  'form#new_product': 	$.ninja.submits_as_ajax()
 })
 
                            
 
-// { busy_element: function(elem){ $('#products') } }
+
+
+// { busy_element: '#products table' }
 
 
 
