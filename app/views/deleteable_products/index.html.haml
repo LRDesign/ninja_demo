@@ -1,4 +1,4 @@
-%h1 List of Slow Products
+%h1 List of Deleteable Products
 
 #products
   %table
@@ -7,7 +7,7 @@
       %th Description
       %th Price
       %th{:colspan => 3}
-    =render :partial => 'slow_products/product', :collection => @products
+    =render :partial => 'deleteable_products/product', :collection => @products
   
-= link_to 'New Product', new_slow_product_path, :id => "ajax_me" 
+= link_to 'New Product', new_deleteable_product_path, :id => "ajax_me" 
 

@@ -1,5 +1,5 @@
 - @product ||= Product.new 
-= form_for(@product, :url => slow_products_path) do |f| 
+= form_for(@product, :url => deleteable_products_path) do |f| 
 
   .field
     = f.label :name 

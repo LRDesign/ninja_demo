@@ -2,5 +2,5 @@
   %td= product.name 
   %td= product.description 
   %td= product.price 
-  %td= link_to 'Show', slow_product_path(product) 
-  %td= delete_widget product.name, slow_product_path(product)
+  %td= link_to 'Show', deleteable_product_path(product) 
+  %td= delete_widget product.name, deleteable_product_path(product)
