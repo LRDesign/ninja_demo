@@ -4,4 +4,4 @@
   %td= product.price 
   %td= link_to 'Show', slow_product_path(product) 
   %td= link_to 'Edit', edit_slow_product_path(product) 
-  %td= delete_widget product
+  %td= delete_widget product.name, slow_product_path(product)

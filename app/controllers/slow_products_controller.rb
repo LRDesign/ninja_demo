@@ -45,7 +45,7 @@ class SlowProductsController < ApplicationController
     sleep(3)
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(slow_product_path(@product), :notice => 'Product was successfully created.') }
+        format.html { redirect_to(slow_products_path, :notice => 'Product was successfully created.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
         format.js
       else
@@ -71,15 +71,17 @@ class SlowProductsController < ApplicationController
     end
   end
 
+  respond_to :js, :html, :xml
+
+
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(slow_products_url) }
-      format.xml  { head :ok }
-    end
+    Rails.logger.debug{@product.inspect}
+
+    respond_with(@product)
   end
 end
