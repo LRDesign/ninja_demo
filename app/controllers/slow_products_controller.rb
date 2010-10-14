@@ -82,6 +82,9 @@ class SlowProductsController < ApplicationController
 
     Rails.logger.debug{@product.inspect}
 
-    respond_with(@product)
+    respond_to do |format|
+      format.html { redirect_to :back}
+      format.js    
+    end
   end
 end

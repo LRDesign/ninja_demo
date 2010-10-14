@@ -1,2 +1,2 @@
-$("#products table tbody").append("<%= escape_javascript(render(@product)) %>") 
+$("#products table tbody").append("<%= escape_javascript(render :partial => 'product', :object => @product) %>") 
 $("#products form").remove()
