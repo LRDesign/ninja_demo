@@ -1,4 +1,4 @@
-class SlowProductsController < ApplicationController
+class DeleteableProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
@@ -42,10 +42,9 @@ class SlowProductsController < ApplicationController
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
-    sleep(3)
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(slow_products_path, :notice => 'Product was successfully created.') }
+        format.html { redirect_to(deleteable_products_path, :notice => 'Product was successfully created.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
         format.js
       else
@@ -62,7 +61,7 @@ class SlowProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(slow_product_path(@product), :notice => 'Product was successfully updated.') }
+        format.html { redirect_to(deleteable_product_path(@product), :notice => 'Product was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +78,7 @@ class SlowProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    sleep(3)
+
     Rails.logger.debug{@product.inspect}
 
     respond_to do |format|

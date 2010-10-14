@@ -1,0 +1,6 @@
+= content_tag_for :tr, product do
+  %td= product.name 
+  %td= product.description 
+  %td= product.price 
+  %td= link_to 'Show', slow_product_path(product) 
+  %td= delete_widget product.name, slow_product_path(product)
